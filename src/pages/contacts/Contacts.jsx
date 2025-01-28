@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { columns, rows } from './data';
+import { columns, rows } from '../invoices/data';
 
 export default function Contacts() {
   return (
