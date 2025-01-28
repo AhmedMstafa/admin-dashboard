@@ -26,7 +26,6 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   function onSubmit() {
@@ -142,7 +141,7 @@ export default function Form() {
           variant="filled"
           sx={{ width: '100%' }}
         >
-          This is a success Alert inside a Snackbar!
+          Account created successfully
         </Alert>
       </Snackbar>
     </Box>
