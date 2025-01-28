@@ -224,6 +224,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:
+                    location.pathname === item.path
+                      ? theme.palette.mode === 'dark'
+                        ? grey[800]
+                        : grey[300]
+                      : null,
                 },
                 open
                   ? {
@@ -277,6 +283,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:
+                    location.pathname === item.path
+                      ? theme.palette.mode === 'dark'
+                        ? grey[800]
+                        : grey[300]
+                      : null,
                 },
                 open
                   ? {
