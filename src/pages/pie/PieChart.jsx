@@ -1,61 +1,46 @@
-import { ResponsiveBar } from '@nivo/bar';
-import { Box } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
+import { ResponsivePie } from '@nivo/pie';
 
 const data = [
   {
-    year: 2019,
-    Spain: 900,
-    France: 1400,
-    Germany: 1700,
+    id: 'python',
+    label: 'python',
+    value: 339,
+    color: 'hsl(319, 70%, 50%)',
   },
-
   {
-    year: 2020,
-    Spain: 1000,
-    France: 1500,
-    Germany: 1800,
+    id: 'go',
+    label: 'go',
+    value: 149,
+    color: 'hsl(281, 70%, 50%)',
   },
-
   {
-    year: 2021,
-    Spain: 1100,
-    France: 1600,
-    Germany: 1900,
+    id: 'make',
+    label: 'make',
+    value: 113,
+    color: 'hsl(49, 70%, 50%)',
   },
-
   {
-    year: 2022,
-    Spain: 1200,
-    France: 1700,
-    Germany: 2000,
+    id: 'hack',
+    label: 'hack',
+    value: 346,
+    color: 'hsl(62, 70%, 50%)',
   },
-
   {
-    year: 2023,
-    Spain: 1260,
-    France: 1709,
-    Germany: 2080,
+    id: 'c',
+    label: 'c',
+    value: 400,
+    color: 'hsl(123, 70%, 50%)',
   },
 ];
 
-export default function BarChart({ isDashboard = false }) {
+export default function PieChart({ isDashboard = true }) {
   const theme = useTheme();
+
   return (
-    <Box sx={{ height: isDashboard ? '300px' : '75vh' }}>
-      <ResponsiveBar
+    <Box sx={{ height: isDashboard ? '250px' : '75vh' }}>
+      <ResponsivePie
         data={data}
-        keys={['year', 'Spain', 'France', 'Germany']}
-        indexBy="year"
-        margin={
-          isDashboard
-            ? { top: 10, right: 130, bottom: 20, left: 60 }
-            : { top: 50, right: 130, bottom: 50, left: 60 }
-        }
-        padding={0.3}
-        valueScale={{ type: 'linear' }}
-        indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'paired' }}
         theme={{
           text: {
             fontSize: 11,
@@ -165,12 +150,38 @@ export default function BarChart({ isDashboard = false }) {
             tableCellValue: {},
           },
         }}
+        margin={
+          isDashboard
+            ? { top: 10, right: 10, bottom: 10, left: 10 }
+            : { top: 40, right: 80, bottom: 80, left: 80 }
+        }
+        enableArcLabels={!isDashboard}
+        enableArcLinkLabels={!isDashboard}
+        innerRadius={isDashboard ? 0.7 : 0.5}
+        padAngle={0.7}
+        cornerRadius={0}
+        activeOuterRadiusOffset={8}
+        colors={{ scheme: 'paired' }}
+        borderWidth={1}
+        borderColor={{
+          from: 'color',
+          modifiers: [['darker', 0.2]],
+        }}
+        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsTextColor={theme.palette.text.primary}
+        arcLinkLabelsThickness={2}
+        arcLinkLabelsColor={{ from: 'color' }}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{
+          from: 'color',
+          modifiers: [['darker', 2]],
+        }}
         defs={[
           {
-            id: 'dots',
-            type: 'patternDots',
+            id: 'any',
+            type: 'patternany',
             background: 'inherit',
-            color: '#38bcb2',
+            color: 'rgba(255, 255, 255, 0.3)',
             size: 4,
             padding: 1,
             stagger: true,
@@ -179,7 +190,7 @@ export default function BarChart({ isDashboard = false }) {
             id: 'lines',
             type: 'patternLines',
             background: 'inherit',
-            color: '#eed312',
+            color: 'rgba(255, 255, 255, 0.3)',
             rotation: -45,
             lineWidth: 6,
             spacing: 10,
@@ -188,75 +199,81 @@ export default function BarChart({ isDashboard = false }) {
         fill={[
           {
             match: {
-              id: 'fries',
+              id: 'ruby',
             },
-            id: 'dots',
+            id: 'any',
           },
           {
             match: {
-              id: 'sandwich',
+              id: 'c',
+            },
+            id: 'any',
+          },
+          {
+            match: {
+              id: 'go',
+            },
+            id: 'any',
+          },
+          {
+            match: {
+              id: 'python',
+            },
+            id: 'any',
+          },
+          {
+            match: {
+              id: 'scala',
+            },
+            id: 'lines',
+          },
+          {
+            match: {
+              id: 'lisp',
+            },
+            id: 'lines',
+          },
+          {
+            match: {
+              id: 'elixir',
+            },
+            id: 'lines',
+          },
+          {
+            match: {
+              id: 'javascript',
             },
             id: 'lines',
           },
         ]}
-        borderColor={{
-          from: 'color',
-          modifiers: [['darker', 1.6]],
-        }}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: isDashboard ? '' : 'Year',
-          legendPosition: 'middle',
-          legendOffset: 35,
-          truncateTickAt: 0,
-        }}
-        axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: isDashboard ? '' : 'salary/month',
-          legendPosition: 'middle',
-          legendOffset: -50,
-          truncateTickAt: 0,
-        }}
-        labelSkipWidth={12}
-        labelSkipHeight={12}
-        labelTextColor={{
-          from: 'color',
-          modifiers: [['darker', 1.6]],
-        }}
-        legends={[
-          {
-            dataFrom: 'keys',
-            anchor: 'bottom-right',
-            direction: 'column',
-            justify: false,
-            translateX: 120,
-            translateY: 0,
-            itemsSpacing: 2,
-            itemWidth: 100,
-            itemHeight: 20,
-            itemDirection: 'left-to-right',
-            itemOpacity: 0.85,
-            symbolSize: 20,
-            effects: [
-              {
-                on: 'hover',
-                style: {
+        legends={
+          isDashboard
+            ? []
+            : [
+                {
+                  anchor: 'bottom',
+                  direction: 'row',
+                  justify: false,
+                  translateX: 0,
+                  translateY: 56,
+                  itemsSpacing: 0,
+                  itemWidth: 100,
+                  itemHeight: 18,
+                  itemTextColor: theme.palette.text.primary,
+                  itemDirection: 'left-to-right',
                   itemOpacity: 1,
+                  symbolSize: 18,
+                  symbolShape: 'circle',
+                  effects: [
+                    {
+                      on: 'hover',
+                      style: {
+                        itemTextColor: theme.palette.text.primary,
+                      },
+                    },
+                  ],
                 },
-              },
-            ],
-          },
-        ]}
-        role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={(e) =>
-          e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue
+              ]
         }
       />
     </Box>

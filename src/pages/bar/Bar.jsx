@@ -1,5 +1,5 @@
 import BarChart from './BarChart';
 
 export default function Bar() {
-  return <BarChart />;
+  return <BarChart isDashboard={false} />;
 }
