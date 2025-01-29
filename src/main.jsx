@@ -20,6 +20,7 @@ import Bar from './pages/bar/Bar';
 import Pie from './pages/pie/Pie';
 import Line from './pages/line/Line';
 import Geography from './pages/geography/Geography';
+import NotFound from './pages/not-found/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="pie" element={<Pie />} />
       <Route path="line" element={<Line />} />
       <Route path="geography" element={<Geography />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

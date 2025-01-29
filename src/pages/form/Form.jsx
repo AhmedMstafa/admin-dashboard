@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Header from '../../components/Header';
 
 const emailRegex =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -52,6 +53,7 @@ export default function Form() {
       autoComplete="off"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <Header title="CREATE USER" subTitle="Create a New User Profile" />
       <Stack direction={'row'} sx={{ gap: 2 }}>
         <TextField
           sx={{ flex: 1 }}
