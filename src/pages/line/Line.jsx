@@ -1,3 +1,5 @@
+import LineChart from './LineChart';
+
 export default function Line() {
-  return <div>Line Page Will Be Here</div>;
+  return <LineChart />;
 }
