@@ -18,6 +18,7 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Avatar, styled, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -96,6 +97,7 @@ const listThree = [
   { text: 'Bar Chart', icon: <BarChartOutlinedIcon />, path: '/bar' },
   { text: 'Pie Chart', icon: <PieChartOutlineOutlinedIcon />, path: '/pie' },
   { text: 'Line Chart', icon: <TimelineOutlinedIcon />, path: '/line' },
+  { text: 'Geography', icon: <MapOutlinedIcon />, path: '/geography' },
 ];
 
 const DrawerHeader = styled('div')(({ theme }) => ({
