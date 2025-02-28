@@ -1,28 +1,27 @@
-# Factory MES Dashboard
+# Admin Dashboard
 
-The Factory MES Dashboard is a modern and responsive web application developed to manage and monitor manufacturing execution systems (MES) in a factory setting. This project utilizes various technologies to create a robust, dynamic, and user-friendly interface for real-time data visualization and management.
+The Admin Dashboard is a modern and responsive web application developed by Ali Dev. This project focuses on creating an interactive and user-friendly interface for managing and monitoring various administrative tasks using MUI and React.
 
 ## Project Overview
 
-The Factory MES Dashboard is designed to help users monitor and manage manufacturing processes efficiently. The project demonstrates the application of advanced web development techniques to create a visually appealing and functional dashboard for factory management.
+The Admin Dashboard is designed to help users manage administrative tasks efficiently. The project demonstrates the application of advanced web development techniques to create a visually appealing and functional dashboard for admin management.
 
 ## Features
 
 - **Responsive Design:** The dashboard adapts seamlessly to different screen sizes and devices.
-- **Real-Time Data Visualization:** Displays real-time data and analytics using visually appealing charts and graphs.
-- **Seamless Navigation:** Utilizes React Router for smooth navigation between different sections of the dashboard.
-- **Icon Integration:** Incorporates React Icons to enhance the user experience with visually appealing icons.
-- **Date and Time Management:** Uses Dayjs to handle date and time operations effortlessly.
+- **Data Visualization:** Displays real-time data and analytics using visually appealing charts and graphs.
+- **User Management:** Allows administrators to manage users, roles, and permissions.
+- **Form Handling:** Uses React Hook Form for efficient form handling and validation.
+- **Icons Integration:** Incorporates React Icons to enhance the user experience with visually appealing icons.
 - **Sleek UI Design:** Implements MUI for a modern and responsive design.
 
 ## Technologies Used
 
-- React: For the robust and dynamic user interface.
-- React Router: To handle seamless navigation.
-- MUI: For a sleek and responsive design.
-- React Icons: Adding visually appealing icons to enhance the user experience.
-- Nivo: For creating stunning data visualizations.
-- Dayjs: To effortlessly manage date and time.
+- React
+- React Router
+- React Hook Form
+- React Icons
+- MUI (Material-UI)
 - JavaScript (ES6+)
 - HTML5
 - CSS3
@@ -45,7 +44,7 @@ To get a local copy of the project up and running, follow these simple steps:
     ```
 2. Navigate to the project directory:
     ```bash
-    cd factory-mes-dashboard
+    cd AhmedMstafa
     ```
 3. Install the dependencies:
     ```bash
